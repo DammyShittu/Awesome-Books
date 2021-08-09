@@ -24,6 +24,21 @@ function showBooks(book) {
   return bookList;
 }
 
+const titleInput = document.getElementById('book-title');
+const authorInput = document.getElementById('book-author');
+const form = document.getElementById('form');
+
+// Add New Book To List
+function addBookToList(e) {
+  e.preventDefault();
+  const newBook = {
+    title: titleInput.value,
+    author: authorInput.value,
+  };
+  bookSection.innerHTML += showBooks(newBook);
+}
+form.addEventListener('submit', addBookToList)
+
 function showMyBooks() {
   const myBooks = Object.keys(awesomeBooks);
   const myBooksLength = Object.keys(awesomeBooks).length;
