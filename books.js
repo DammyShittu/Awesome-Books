@@ -3,6 +3,7 @@ const bookTitle = document.getElementById('book-title');
 const bookAuthor = document.getElementById('book-author');
 const form = document.getElementById('form');
 
+// Check if books are in LocalStorage
 function getBooks() {
   let myBooks;
   if (localStorage.getItem('newBooks') === null) {
@@ -14,17 +15,21 @@ function getBooks() {
 }
 
 // Div that contains book HTML
-function showBooks(book) {
-  const bookList = `
-  <div id="book-info">
-  <p>${book.title}</p>
-  <p>${book.author}</p>
-  <button type="submit" class="remove-book">Remove</button>
-  <hr>
-  </div>
-  `;
-
-  bookSection.innerHTML += bookList;
+function showBooks() {
+  bookSection.innerHTML = '';
+  const myBooks = getBooks();
+  for (let i = 0; i < myBooks.length; i += 1) {
+    const book = myBooks[i];
+    const bookList = `
+    <div id="book-info">
+    <p>${book.title}</p>
+    <p>${book.author}</p>
+    <button id=${i} type="submit" class="remove-book" onclick="removeBook(this.id)">Remove</button>
+    <hr> 
+    </div>
+    `;
+    bookSection.innerHTML += bookList;
+  }
 }
 
 // This code clears the input field after books have been submitted
@@ -52,31 +57,20 @@ function addBookToList(e) {
     title: bookTitle.value,
     author: bookAuthor.value,
   };
-  showBooks(newBook);
   clearInput();
   setLocalStorage(newBook);
+  showBooks();
+}
+
+// Remove book from localStorage
+/* eslint-disable no-unused-vars */
+function removeBook(id) {
+  const myBooks = getBooks();
+  myBooks.splice(id, 1);
+  localStorage.setItem('newBooks', JSON.stringify(myBooks));
+  showBooks();
 }
 
 form.addEventListener('submit', addBookToList);
 
-// Remove books from Local Storage
-
-function removeFromLocalStorage() {
-  const myBooks = JSON.parse(localStorage.getItem('newBooks'));
-  myBooks.forEach((index) => {
-    myBooks.splice(index, 1);
-    return myBooks;
-  });
-  localStorage.setItem('newBooks', JSON.stringify(myBooks));
-}
-
-// Remove Books
-function deleteBook(book) {
-  if (book.classList.contains('remove-book')) {
-    book.parentElement.remove();
-  }
-}
-bookSection.addEventListener('click', (e) => {
-  deleteBook(e.target);
-  removeFromLocalStorage(e.target);
-});
+showBooks();
