@@ -1,17 +1,17 @@
-// Books Array
-const awesomeBooks = [
-  {
-    title: 'Things Fall Apart',
-    author: 'Chinua Achebe',
-  },
+const bookSection = document.querySelector('.books');
+const bookTitle = document.getElementById('book-title');
+const bookAuthor = document.getElementById('book-author');
+const form = document.getElementById('form');
 
-  {
-    title: 'Understanding Faith',
-    author: 'Gbeminiyi Eboda',
-  },
-];
-
-const bookSection = document.getElementById('awesome-books');
+function getBooks() {
+  let myBooks;
+  if (localStorage.getItem('newBooks') === null) {
+    myBooks = [];
+  } else {
+    myBooks = JSON.parse(localStorage.getItem('newBooks'));
+  }
+  return myBooks;
+}
 
 // Div that contains book HTML
 function showBooks(book) {
@@ -19,80 +19,64 @@ function showBooks(book) {
   <div id="book-info">
   <p>${book.title}</p>
   <p>${book.author}</p>
-  <button type="submit" id="remove-book" onclick="removeItem()">Remove</button>
+  <button type="submit" class="remove-book">Remove</button>
   <hr>
   </div>
   `;
 
-  return bookList;
+  bookSection.innerHTML += bookList;
+}
+
+// This code clears the input field after books have been submitted
+function clearInput() {
+  bookTitle.value = '';
+  bookAuthor.value = '';
+}
+
+// Add books to local storage
+function setLocalStorage(item) {
+  const books = getBooks();
+  books.push(item);
+
+  localStorage.setItem('newBooks', JSON.stringify(books));
 }
 
 // Add New Book To List
 
-const bookTitle = document.getElementById('book-title');
-const bookAuthor = document.getElementById('book-author');
-const form = document.getElementById('form');
-
 function addBookToList(e) {
   e.preventDefault();
+  if (bookTitle.value === '' && bookAuthor.value === '') {
+    return;
+  }
   const newBook = {
     title: bookTitle.value,
     author: bookAuthor.value,
   };
-  bookSection.innerHTML += showBooks(newBook);
+  showBooks(newBook);
+  clearInput();
+  setLocalStorage(newBook);
 }
+
 form.addEventListener('submit', addBookToList);
 
-// Display Books in UI
-function showMyBooks() {
-  const myBooks = Object.keys(awesomeBooks);
-  const myBooksLength = Object.keys(awesomeBooks).length;
-  for (let i = 0; i < myBooksLength; i += 1) {
-    bookSection.innerHTML += showBooks(awesomeBooks[myBooks[i]], i);
-  }
+// Remove books from Local Storage
+
+function removeFromLocalStorage() {
+  const myBooks = JSON.parse(localStorage.getItem('newBooks'));
+  myBooks.forEach((index) => {
+    myBooks.splice(index, 1);
+    return myBooks;
+  });
+  localStorage.setItem('newBooks', JSON.stringify(myBooks));
 }
 
 // Remove Books
-/* eslint-disable no-unused-vars */
-function removeItem() {
-  const removeBook = document.getElementById('book-info');
-  removeBook.parentElement.remove(removeBook);
-}
-
-window.onload = showMyBooks;
-
-// Local Storage
-
-// Check If Books Are In Local Storage
-
-const getBookInfo = JSON.parse(localStorage.getItem('MyBooks')) || [];
-
-if (getBookInfo) {
-  for (let i = 0; i < getBookInfo.length; i += 1) {
-    bookTitle.value = getBookInfo[i].title;
-    bookAuthor.value = getBookInfo[i].author;
+function deleteBook(book) {
+  if (book.classList.contains('remove-book')) {
+    book.parentElement.remove();
   }
 }
-
-// Set Items in Local Storage
-const allBooks = [];
-
-function bookInfo() {
-  const titleInput = bookTitle.value;
-  const authorInput = bookAuthor.value;
-
-  const bookStorage = {
-    title: titleInput,
-    author: authorInput,
-  };
-
-  allBooks.push(bookStorage);
-
-  localStorage.setItem('MyBooks', JSON.stringify(allBooks));
-}
-
-// Add Books To Local Storage On Form Submit
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  bookInfo();
+bookSection.addEventListener('click', (e) => {
+  deleteBook(e.target);
+  removeFromLocalStorage(e.target);
 });
