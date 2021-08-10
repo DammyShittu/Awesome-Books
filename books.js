@@ -26,7 +26,7 @@ class Page {
   // Div that contains book HTML
   static showBooks() {
     bookSection.innerHTML = '';
-    const myBooks = Page.getBooks();
+    const myBooks = this.getBooks();
     for (let i = 0; i < myBooks.length; i += 1) {
       const book = myBooks[i];
       const bookList = `
@@ -46,4 +46,39 @@ class Page {
     bookTitle.value = '';
     bookAuthor.value = '';
   }
+
+  // Add books to local storage
+  static setLocalStorage(item) {
+    const books = this.getBooks();
+    books.push(item);
+
+    localStorage.setItem('newBooks', JSON.stringify(books));
+  }
 }
+
+// Add New Book To List
+function addBookToList(e) {
+  e.preventDefault();
+  if (bookTitle.value === '' && bookAuthor.value === '') {
+    return;
+  }
+  const title = document.getElementById('book-title').value;
+  const author = document.getElementById('book-author').value;
+  const newBook = new AwesomeBooks(title, author);
+  Page.clearInput();
+  Page.setLocalStorage(newBook);
+  Page.showBooks();
+}
+
+form.addEventListener('submit', addBookToList);
+
+// Remove book from localStorage
+/* eslint-disable no-unused-vars */
+function removeBook(id) {
+  const myBooks = Page.getBooks();
+  myBooks.splice(id, 1);
+  localStorage.setItem('newBooks', JSON.stringify(myBooks));
+  Page.showBooks();
+}
+
+Page.showBooks();
