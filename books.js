@@ -1,26 +1,35 @@
+/* eslint-disable max-classes-per-file */
 const bookSection = document.querySelector('.books');
 const bookTitle = document.getElementById('book-title');
 const bookAuthor = document.getElementById('book-author');
 const form = document.getElementById('form');
 
-// Check if books are in LocalStorage
-function getBooks() {
-  let myBooks;
-  if (localStorage.getItem('newBooks') === null) {
-    myBooks = [];
-  } else {
-    myBooks = JSON.parse(localStorage.getItem('newBooks'));
+class AwesomeBooks {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
   }
-  return myBooks;
 }
 
-// Div that contains book HTML
-function showBooks() {
-  bookSection.innerHTML = '';
-  const myBooks = getBooks();
-  for (let i = 0; i < myBooks.length; i += 1) {
-    const book = myBooks[i];
-    const bookList = `
+class Page {
+  // Check if books are in LocalStorage
+  static getBooks() {
+    let myBooks;
+    if (localStorage.getItem('newBooks') === null) {
+      myBooks = [];
+    } else {
+      myBooks = JSON.parse(localStorage.getItem('newBooks'));
+    }
+    return myBooks;
+  }
+
+  // Div that contains book HTML
+  static showBooks() {
+    bookSection.innerHTML = '';
+    const myBooks = Page.getBooks();
+    for (let i = 0; i < myBooks.length; i += 1) {
+      const book = myBooks[i];
+      const bookList = `
     <div id="book-info">
     <p>${book.title}</p>
     <p>${book.author}</p>
@@ -28,49 +37,13 @@ function showBooks() {
     <hr> 
     </div>
     `;
-    bookSection.innerHTML += bookList;
+      bookSection.innerHTML += bookList;
+    }
+  }
+
+  // This code clears the input field after books have been submitted
+  static clearInput() {
+    bookTitle.value = '';
+    bookAuthor.value = '';
   }
 }
-
-// This code clears the input field after books have been submitted
-function clearInput() {
-  bookTitle.value = '';
-  bookAuthor.value = '';
-}
-
-// Add books to local storage
-function setLocalStorage(item) {
-  const books = getBooks();
-  books.push(item);
-
-  localStorage.setItem('newBooks', JSON.stringify(books));
-}
-
-// Add New Book To List
-
-function addBookToList(e) {
-  e.preventDefault();
-  if (bookTitle.value === '' && bookAuthor.value === '') {
-    return;
-  }
-  const newBook = {
-    title: bookTitle.value,
-    author: bookAuthor.value,
-  };
-  clearInput();
-  setLocalStorage(newBook);
-  showBooks();
-}
-
-// Remove book from localStorage
-/* eslint-disable no-unused-vars */
-function removeBook(id) {
-  const myBooks = getBooks();
-  myBooks.splice(id, 1);
-  localStorage.setItem('newBooks', JSON.stringify(myBooks));
-  showBooks();
-}
-
-form.addEventListener('submit', addBookToList);
-
-showBooks();
