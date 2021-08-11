@@ -57,7 +57,8 @@ hr {
   overflow-wrap: break-word;
 }
 
-#book-info button{
+#book-info button,
+#form button {
   padding: 5px 10px;
   border-radius: 3px;
   outline: none;
@@ -65,4 +66,35 @@ hr {
   box-shadow: 3px 3px 0 #333;
 }
 
+#form-section {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#form-section h2 {
+  font-size: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  margin: 30px auto;
+  align-items: center;
+  gap: 25px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  caret-color: brown;
+  border: 3px solid #000;
+  font-size: 16px;
+}
+
+#form button {
+  align-self: flex-end;
+  padding: 7px 15px;
+  font-size: 16px;
+}
 
