@@ -5,8 +5,7 @@
 }
 
 body {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 16px;
   line-height: 1.6;
@@ -26,12 +25,16 @@ hr {
   border-top: 3px solid #333;
 }
 
+/* Book Section Styling */
+
 #books {
   display: grid;
   grid-template-columns: 1fr;
-  width: 60%;
-  height: auto;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
   margin: 0 auto;
+  height: auto; 
   border: 3px solid #333;
   padding: 15px 0;
 }
@@ -42,6 +45,7 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 15px;
 }
 
 #book-info:nth-child(odd) {
@@ -53,7 +57,6 @@ hr {
 }
 
 #book-info p {
-  width: 450px;
   overflow-wrap: break-word;
 }
 
@@ -65,6 +68,8 @@ hr {
   cursor: pointer;
   box-shadow: 3px 3px 0 #333;
 }
+
+/* Form Section Styling */
 
 #form-section {
   margin-top: 50px;
@@ -78,7 +83,7 @@ hr {
 form {
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 70%;
   margin: 30px auto;
   align-items: center;
   gap: 25px;
@@ -94,7 +99,20 @@ input {
 
 #form button {
   align-self: flex-end;
-  padding: 7px 15px;
+  padding: 7px 30px;
   font-size: 16px;
 }
 
+/* Media Queries */
+
+@media all and (min-width: 768px) {
+  #books {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  form {
+    width: 35%;
+    margin: 30px auto;
+  }
+}
