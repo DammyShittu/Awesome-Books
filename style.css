@@ -1,4 +1,68 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  width: 80%;
+  margin: 0 auto;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px auto;
+  font-size: 40px;
+  color: #333;
+}
+
+hr {
+  width: 20%;
+  margin: 30px auto;
+  border-top: 3px solid #333;
+}
+
+#books {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 60%;
+  height: auto;
+  margin: 0 auto;
+  border: 3px solid #333;
+  padding: 15px 0;
+}
+
+#book-info {
+  padding: 10px 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#book-info:nth-child(odd) {
+  background-color: rgba(119, 136, 153, 0.296);
+}
+
+#book-info:nth-child(even) {
+  background-color: #fff;
+}
+
+#book-info p {
+  width: 450px;
+  overflow-wrap: break-word;
+}
+
+#book-info button{
+  padding: 5px 10px;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #333;
+}
+
+
