@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-const bookSection = document.querySelector('.books');
+const bookSection = document.getElementById('books');
 const bookTitle = document.getElementById('book-title');
 const bookAuthor = document.getElementById('book-author');
 const form = document.getElementById('form');
@@ -31,10 +31,8 @@ class Page {
       const book = myBooks[i];
       const bookList = `
     <div id="book-info">
-    <p>${book.title}</p>
-    <p>${book.author}</p>
-    <button id=${i} type="submit" class="remove-book" onclick="removeBook(this.id)">Remove</button>
-    <hr> 
+    <p>"${book.title}" by ${book.author}</p>
+    <button id=${i} type="submit" class="remove-book" onclick="removeBook(this.id)">Remove</button> 
     </div>
     `;
       bookSection.innerHTML += bookList;

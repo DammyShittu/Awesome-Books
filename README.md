@@ -35,7 +35,9 @@ GIT
 
 Github
 
-# 👤 Author
+# 👤 Author 1
+
+## Adedamola Shittu
 
 GitHub: [@dammyShittu](https://github.com/DammyShittu/)
 
@@ -43,6 +45,16 @@ GitHub: [@dammyShittu](https://github.com/DammyShittu/)
 Twitter: [@aded_shittu](https://twitter.com/aded_shittu/)
 
 LinkedIn: [Adedamola Shittu](https://linkedin.com/in/adedamola-shittu-3ab465172/)
+
+# 👤 Author 2
+
+## Muhammad Sohaib Asif
+
+GitHub: [@sohaibya](https://github.com/sohaibya)
+
+
+Twitter: [@sohaib](https://twitter.com/sohaib/)
+
 
 # 🤝 Contributing
 
