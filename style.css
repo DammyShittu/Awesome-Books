@@ -238,7 +238,22 @@ footer p {
 /* Media Queries */
 
 @media all and (min-width: 768px) {
-  #books {
+
+  #current-time {
+    padding-top: 15px;
+    padding-right: 30px;
+    font-size: 14px;
+  }
+
+  #page-nav ul li {
+    margin-right: 30px;
+  }
+
+  #books,
+  #contact,
+  #current-time,
+  footer p,
+  #page-nav {
     width: 60%;
     margin: 0 auto;
   }
@@ -246,5 +261,17 @@ footer p {
   form {
     width: 35%;
     margin: 30px auto;
+  }
+
+  #contact {
+    margin-bottom: 30px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  footer p {
+    justify-content: center;
   }
 }
