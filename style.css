@@ -30,12 +30,6 @@ hr {
 
 header {
   width: 100%;
-  /* height: auto; */
-  /* position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; */
 }
 
 .main-nav {
@@ -67,8 +61,7 @@ footer p,
 }
 
 #contact a,
-#page-nav span a,
-#page-nav ul li a {
+#page-nav span a {
   text-decoration: none;
   color: #333;
   transition: 250ms ease-out;
@@ -77,6 +70,13 @@ footer p,
 #page-nav span a {
   font-weight: bold;
   font-size: 15px;
+}
+
+#page-nav ul li a {
+  font-size: 14px;
+  text-decoration: none;
+  transition: 300ms ease-in-out;
+  color: #333;
 }
 
 #contact a:hover,
@@ -93,14 +93,6 @@ footer p,
 #page-nav ul li {
   display: inline-block;
   margin-right: 10px;
-}
-
-#page-nav ul li a {
-  font-size: 14px;
-}
-
-#page-nav ul li a:focus {
-  color: red;
 }
 
 #current-time {
@@ -141,6 +133,13 @@ footer p,
   background-color: #fff;
 }
 
+footer p {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
 #book-info p {
   overflow-wrap: break-word;
 }
@@ -155,11 +154,17 @@ footer p,
   transition: 300ms ease-in-out;
 }
 
+#form button {
+  align-self: flex-end;
+  padding: 7px 30px;
+  font-size: 16px;
+}
+
 #book-info button:hover,
 #form button:hover {
   background-color: #333;
   color: #eee;
-  transform: scale(.95);
+  transform: scale(0.95);
 }
 
 /* Form Section Styling */
@@ -183,12 +188,6 @@ input {
   padding: 10px;
   caret-color: brown;
   border: 2px solid #000;
-  font-size: 16px;
-}
-
-#form button {
-  align-self: flex-end;
-  padding: 7px 30px;
   font-size: 16px;
 }
 
@@ -221,17 +220,11 @@ input {
 /* Footer */
 
 footer {
- 
   width: 100%;
   background-color: rgb(38, 37, 37);
   color: #f4f4f4;
-}
-
-footer p {
-  height: 40px;
-  display: flex;
-  align-items: center;
-  font-size: 15px;
+  position: absolute;
+  bottom: 0;
 }
 
 /* New class to change display of page sections */
@@ -243,7 +236,6 @@ footer p {
 /* Media Queries */
 
 @media all and (min-width: 768px) {
-
   #current-time {
     padding-top: 15px;
     padding-right: 30px;
@@ -274,12 +266,6 @@ footer p {
 
   .contact-info {
     text-align: center;
-  }
-
-  footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
   }
 
   footer p {
