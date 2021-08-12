@@ -10,23 +10,67 @@
 </head>
 
 <body>
-  <h1>All Awesome Books</h1>
-  <section id="books">
+  <!-- Header -->
 
-  </section>
-  <hr>
+  <header id="books-header">
+    <nav>
+      <span><a href="#">Awesome Books</a></span>
+      <ul>
+        <li id="list"><a href="#books">List</a></li>
+        <li id="add-new"><a href="#form-section">Add New</a></li>
+        <li id="contact-us"><a href="#contact">Contact</a></li>
+      </ul>
 
-  <section id="form-section">
-    <h2>Add New Book</h2>
+    </nav>
+    <p id="current-time"></p>
+  </header>
 
-    <form id="form">
-      <input type="text" id="book-title" placeholder="Title">
-      <input type="text" id="book-author" placeholder="Author">
+  <!-- Book List Section -->
+  <main>
+    <h1>All Awesome Books</h1>
+    <section id="books">
 
-      <button type="submit">Add</button>
-    </form>
-  </section>
+    </section>
+    <hr>
 
+    <!-- Add New Books Section -->
+
+    <section id="form-section">
+      <h2>Add New Book</h2>
+
+      <form id="form">
+        <input type="text" id="book-title" placeholder="Title">
+        <input type="text" id="book-author" placeholder="Author">
+
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
+
+    <!-- Contact Section -->
+
+    <section id="contact">
+      <h2>Contact Information</h2>
+
+      <div class="contact-info">
+        <h3>Do you have any questions or you just want to say "Hello"?<br>
+          You can reach out to us!
+        </h3>
+
+        <address>
+          Our e-mail: <a href="mailto:awesomebooks@mail.com">awesomebooks@mail.com</a><br>
+          Our phone number: <a href="tel:+234810055665">+234810055665</a><br>
+          Our address: 35, Redemption Avenue, Silicon Valley.
+        </address>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Adedamola Shittu &copy; 2021</p>
+  </footer>
 
   <script src="books.js"></script>
 </body>

@@ -12,10 +12,11 @@ body {
   background-color: #f4f4f4;
 }
 
-h1 {
+h1,
+h2 {
   text-align: center;
   margin: 50px auto;
-  font-size: 40px;
+  font-size: 30px;
   color: #333;
 }
 
@@ -67,6 +68,14 @@ hr {
   outline: none;
   cursor: pointer;
   box-shadow: 3px 3px 0 #333;
+  transition: 300ms ease-in-out;
+}
+
+#book-info button:hover,
+#form button:hover {
+  background-color: #333;
+  color: #eee;
+  transform: scale(.95);
 }
 
 /* Form Section Styling */
@@ -74,10 +83,6 @@ hr {
 #form-section {
   margin-top: 50px;
   text-align: center;
-}
-
-#form-section h2 {
-  font-size: 30px;
 }
 
 form {
