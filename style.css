@@ -15,7 +15,7 @@ body {
 h1,
 h2 {
   text-align: center;
-  margin: 50px auto;
+  margin: 80px auto;
   font-size: 30px;
   color: #333;
 }
@@ -223,7 +223,7 @@ footer {
   width: 100%;
   background-color: rgb(38, 37, 37);
   color: #f4f4f4;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 
