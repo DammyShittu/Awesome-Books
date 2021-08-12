@@ -1,9 +1,20 @@
 /* eslint-disable max-classes-per-file */
+
+
+// Global variables
 const bookSection = document.getElementById('books');
 const bookTitle = document.getElementById('book-title');
 const bookAuthor = document.getElementById('book-author');
 const form = document.getElementById('form');
 
+// Set Current Date and Time with Luxon.js Library
+const time = document.getElementById('current-time');
+/* eslint-disable no-undef */
+const theTime = luxon.DateTime.now();
+time.innerHTML = theTime.toLocaleString(luxon.DateTime.DATETIME_FULL);
+/* eslint-disable no-undef */
+
+// JavaScript Class
 class AwesomeBooks {
   constructor(title, author) {
     this.title = title;

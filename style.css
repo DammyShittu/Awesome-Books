@@ -106,9 +106,10 @@ footer p,
 #current-time {
   display: flex;
   justify-content: flex-end;
-  padding-top: 7px;
+  padding-top: 10px;
   padding-right: 10px;
   font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Book Section Styling */
@@ -233,7 +234,11 @@ footer p {
   font-size: 15px;
 }
 
+/* New class to change display of page sections */
 
+.hide {
+  display: none;
+}
 
 /* Media Queries */
 
