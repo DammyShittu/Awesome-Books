@@ -26,6 +26,91 @@ hr {
   border-top: 3px solid #333;
 }
 
+/* Header Styling */
+
+header {
+  width: 100%;
+  /* height: auto; */
+  /* position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+}
+
+.main-nav {
+  background-color: #fff;
+  box-shadow: 0 1px 15px rgb(97, 97, 97);
+}
+
+#books,
+#contact,
+#current-time,
+footer p,
+#page-nav {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#books,
+#contact,
+#form-section {
+  transition: 400ms ease-in-out;
+}
+
+#page-nav {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#contact a,
+#page-nav span a,
+#page-nav ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: 250ms ease-out;
+}
+
+#page-nav span a {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#contact a:hover,
+#page-nav li a:hover,
+#page-nav span a:hover {
+  color: blue;
+}
+
+#page-nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+#page-nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#page-nav ul li a {
+  font-size: 14px;
+}
+
+#page-nav ul li a:focus {
+  color: red;
+}
+
+#current-time {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 7px;
+  padding-right: 10px;
+  font-size: 13px;
+}
+
 /* Book Section Styling */
 
 #books {
@@ -33,10 +118,8 @@ hr {
   grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  margin: 0 auto;
   height: auto;
-  border: 3px solid #333;
+  border: 2px solid #333;
   padding: 15px 0;
 }
 
@@ -98,7 +181,7 @@ input {
   width: 100%;
   padding: 10px;
   caret-color: brown;
-  border: 3px solid #000;
+  border: 2px solid #000;
   font-size: 16px;
 }
 
@@ -107,6 +190,50 @@ input {
   padding: 7px 30px;
   font-size: 16px;
 }
+
+/* Contact Section Styling */
+
+#contact {
+  margin: 30px auto;
+}
+
+#contact h2 {
+  margin-bottom: 30px;
+}
+
+.contact-info {
+  border: 2px solid #333;
+  padding: 10px;
+}
+
+#contact h3 {
+  font-size: 16px;
+  padding-bottom: 15px;
+}
+
+#contact address {
+  padding-left: 15px;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+/* Footer */
+
+footer {
+  width: 100%;
+  background-color: rgb(38, 37, 37);
+  color: #f4f4f4;
+  
+}
+
+footer p {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+
 
 /* Media Queries */
 
