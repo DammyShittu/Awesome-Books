@@ -14,8 +14,13 @@ const contactUs = document.getElementById('contact-us');
 // Set Current Date and Time with Luxon.js Library
 const time = document.getElementById('current-time');
 /* eslint-disable no-undef */
-const theTime = luxon.DateTime.now();
-time.innerHTML = theTime.toLocaleString(luxon.DateTime.DATETIME_FULL);
+/* eslint-disable no-unused-vars */
+function reloadTime() {
+  const theTime = luxon.DateTime.now();
+  time.innerHTML = theTime.toLocaleString(luxon.DateTime.DATETIME_FULL_WITH_SECONDS);
+}
+const myTime = setInterval(reloadTime, 1000);
+
 /* eslint-disable no-undef */
 
 // Navigation Bar EventListeners
