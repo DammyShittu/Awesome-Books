@@ -4,13 +4,22 @@ This project contains the Awesome Books Project, coded according to requirements
 
 # Project Name
 
-**Awesome Books**
+## Awesome Books
 
-# Screenshot
+# Screenshots
 
-
-![Image of the mobile view](./img/screenshot.png)
-
+<table>
+  <tr>
+    <td>Book List</td>
+     <td>Add New Book</td>
+     <td>Contact</td>
+  </tr>
+  <tr>
+    <td><img src="img\screenshot.png" width=280 height=480></td>
+    <td><img src="img\screenshot1.png" width=280 height=480></td>
+    <td><img src="img\screenshot2.png" width=280 height=480></td>
+  </tr>
+ </table>
 
 
 # Live Website
@@ -35,7 +44,7 @@ GIT
 
 Github
 
-# 👤 Author 1
+# 👤 Author
 
 ## Adedamola Shittu
 
@@ -45,15 +54,6 @@ GitHub: [@dammyShittu](https://github.com/DammyShittu/)
 Twitter: [@aded_shittu](https://twitter.com/aded_shittu/)
 
 LinkedIn: [Adedamola Shittu](https://linkedin.com/in/adedamola-shittu-3ab465172/)
-
-# 👤 Author 2
-
-## Muhammad Sohaib Asif
-
-GitHub: [@sohaibya](https://github.com/sohaibya)
-
-
-Twitter: [@sohaib](https://twitter.com/sohaib/)
 
 
 # 🤝 Contributing

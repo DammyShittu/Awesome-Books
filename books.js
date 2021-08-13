@@ -1,9 +1,49 @@
 /* eslint-disable max-classes-per-file */
+// Global variables
 const bookSection = document.getElementById('books');
 const bookTitle = document.getElementById('book-title');
 const bookAuthor = document.getElementById('book-author');
 const form = document.getElementById('form');
+const formSection = document.getElementById('form-section');
+const contactSection = document.getElementById('contact');
+const theBooksList = document.getElementById('my-books');
+const list = document.getElementById('list');
+const addNew = document.getElementById('add-new');
+const contactUs = document.getElementById('contact-us');
 
+// Set Current Date and Time with Luxon.js Library
+const time = document.getElementById('current-time');
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+function reloadTime() {
+  const theTime = luxon.DateTime.now();
+  time.innerHTML = theTime.toLocaleString(luxon.DateTime.DATETIME_FULL_WITH_SECONDS);
+}
+const myTime = setInterval(reloadTime, 1000);
+
+/* eslint-disable no-undef */
+
+// Navigation Bar EventListeners
+
+list.addEventListener('click', () => {
+  formSection.classList.add('hide');
+  contactSection.classList.add('hide');
+  theBooksList.classList.remove('hide');
+});
+
+addNew.addEventListener('click', () => {
+  formSection.classList.remove('hide');
+  contactSection.classList.add('hide');
+  theBooksList.classList.add('hide');
+});
+
+contactUs.addEventListener('click', () => {
+  formSection.classList.add('hide');
+  contactSection.classList.remove('hide');
+  theBooksList.classList.add('hide');
+});
+
+// JavaScript Class
 class AwesomeBooks {
   constructor(title, author) {
     this.title = title;
@@ -63,6 +103,8 @@ function addBookToList(e) {
   const title = document.getElementById('book-title').value;
   const author = document.getElementById('book-author').value;
   const newBook = new AwesomeBooks(title, author);
+  formSection.classList.add('hide');
+  theBooksList.classList.remove('hide');
   Page.clearInput();
   Page.setLocalStorage(newBook);
   Page.showBooks();
@@ -80,3 +122,7 @@ function removeBook(id) {
 }
 
 Page.showBooks();
+window.onload = () => {
+  formSection.classList.add('hide');
+  contactSection.classList.add('hide');
+};

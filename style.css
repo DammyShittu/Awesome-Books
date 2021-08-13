@@ -12,10 +12,11 @@ body {
   background-color: #f4f4f4;
 }
 
-h1 {
+h1,
+h2 {
   text-align: center;
-  margin: 50px auto;
-  font-size: 40px;
+  margin: 80px auto;
+  font-size: 30px;
   color: #333;
 }
 
@@ -25,6 +26,84 @@ hr {
   border-top: 3px solid #333;
 }
 
+/* Header Styling */
+
+header {
+  width: 100%;
+}
+
+.main-nav {
+  background-color: #fff;
+  box-shadow: 0 1px 15px rgb(97, 97, 97);
+}
+
+#books,
+#contact,
+#current-time,
+footer p,
+#page-nav {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#books,
+#contact,
+#form-section {
+  transition: 400ms ease-in-out;
+}
+
+#page-nav {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#contact a,
+#page-nav span a {
+  text-decoration: none;
+  color: #333;
+  transition: 250ms ease-out;
+}
+
+#page-nav span a {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#page-nav ul li a {
+  font-size: 14px;
+  text-decoration: none;
+  transition: 300ms ease-in-out;
+  color: #333;
+}
+
+#contact a:hover,
+#page-nav li a:hover,
+#page-nav span a:hover {
+  color: blue;
+}
+
+#page-nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+#page-nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#current-time {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+  padding-right: 10px;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 /* Book Section Styling */
 
 #books {
@@ -32,10 +111,8 @@ hr {
   grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  margin: 0 auto;
   height: auto;
-  border: 3px solid #333;
+  border: 2px solid #333;
   padding: 15px 0;
 }
 
@@ -56,6 +133,13 @@ hr {
   background-color: #fff;
 }
 
+footer p {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
 #book-info p {
   overflow-wrap: break-word;
 }
@@ -67,6 +151,20 @@ hr {
   outline: none;
   cursor: pointer;
   box-shadow: 3px 3px 0 #333;
+  transition: 300ms ease-in-out;
+}
+
+#form button {
+  align-self: flex-end;
+  padding: 7px 30px;
+  font-size: 16px;
+}
+
+#book-info button:hover,
+#form button:hover {
+  background-color: #333;
+  color: #eee;
+  transform: scale(0.95);
 }
 
 /* Form Section Styling */
@@ -74,10 +172,6 @@ hr {
 #form-section {
   margin-top: 50px;
   text-align: center;
-}
-
-#form-section h2 {
-  font-size: 30px;
 }
 
 form {
@@ -93,20 +187,70 @@ input {
   width: 100%;
   padding: 10px;
   caret-color: brown;
-  border: 3px solid #000;
+  border: 2px solid #000;
   font-size: 16px;
 }
 
-#form button {
-  align-self: flex-end;
-  padding: 7px 30px;
+/* Contact Section Styling */
+
+#contact {
+  margin: 30px auto;
+}
+
+#contact h2 {
+  margin-bottom: 30px;
+}
+
+.contact-info {
+  border: 2px solid #333;
+  padding: 10px;
+}
+
+#contact h3 {
   font-size: 16px;
+  padding-bottom: 15px;
+}
+
+#contact address {
+  padding-left: 15px;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+/* Footer */
+
+footer {
+  width: 100%;
+  background-color: rgb(38, 37, 37);
+  color: #f4f4f4;
+  position: fixed;
+  bottom: 0;
+}
+
+/* New class to change display of page sections */
+
+.hide {
+  display: none;
 }
 
 /* Media Queries */
 
 @media all and (min-width: 768px) {
-  #books {
+  #current-time {
+    padding-top: 15px;
+    padding-right: 30px;
+    font-size: 14px;
+  }
+
+  #page-nav ul li {
+    margin-right: 30px;
+  }
+
+  #books,
+  #contact,
+  #current-time,
+  footer p,
+  #page-nav {
     width: 60%;
     margin: 0 auto;
   }
@@ -114,5 +258,17 @@ input {
   form {
     width: 35%;
     margin: 30px auto;
+  }
+
+  #contact {
+    margin-bottom: 30px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  footer p {
+    justify-content: center;
   }
 }
