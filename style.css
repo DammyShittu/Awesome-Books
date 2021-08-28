@@ -9,15 +9,15 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 16px;
   line-height: 1.6;
-  background-color: #f4f4f4;
+  background-color: hsl(216, 53%, 9%);
+  color: #fff;
 }
 
 h1,
 h2 {
   text-align: center;
   margin: 80px auto;
-  font-size: 30px;
-  color: #333;
+  font-size: 40px;
 }
 
 hr {
@@ -33,8 +33,8 @@ header {
 }
 
 .main-nav {
-  background-color: #fff;
-  box-shadow: 0 1px 15px rgb(97, 97, 97);
+  background-color: hsl(218, 28%, 13%);
+  box-shadow: 0 1px 15px rgb(80, 80, 80);
 }
 
 #books,
@@ -53,7 +53,7 @@ footer p,
 }
 
 #page-nav {
-  height: 40px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -63,7 +63,7 @@ footer p,
 #contact a,
 #page-nav span a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   transition: 250ms ease-out;
 }
 
@@ -76,13 +76,13 @@ footer p,
   font-size: 14px;
   text-decoration: none;
   transition: 300ms ease-in-out;
-  color: #333;
+  color: #fff;
 }
 
 #contact a:hover,
 #page-nav li a:hover,
 #page-nav span a:hover {
-  color: blue;
+  color: rgb(176, 176, 179);
 }
 
 #page-nav ul {
@@ -130,11 +130,12 @@ footer p,
 }
 
 #book-info:nth-child(even) {
-  background-color: #fff;
+  background-color: rgb(216, 215, 215);
+  color: #000;
 }
 
 footer p {
-  height: 40px;
+  height: 50px;
   display: flex;
   align-items: center;
   font-size: 15px;
@@ -147,7 +148,7 @@ footer p {
 #book-info button,
 #form button {
   padding: 5px 10px;
-  border-radius: 3px;
+  border-radius: 5px;
   outline: none;
   cursor: pointer;
   box-shadow: 3px 3px 0 #333;
@@ -162,7 +163,7 @@ footer p {
 
 #book-info button:hover,
 #form button:hover {
-  background-color: #333;
+  background-color: hsl(219, 30%, 18%);
   color: #eee;
   transform: scale(0.95);
 }
@@ -221,7 +222,7 @@ input {
 
 footer {
   width: 100%;
-  background-color: rgb(38, 37, 37);
+  background-color: hsl(218, 28%, 13%);
   color: #f4f4f4;
   position: fixed;
   bottom: 0;
