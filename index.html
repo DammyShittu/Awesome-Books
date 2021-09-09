@@ -10,24 +10,40 @@
 </head>
 
 <body>
+
+ <!-- Mobile Menu -->
+ <div id="menu" class="mobile-menu">
+  <ul >
+    <li class="classList"><a href="#">About</a></li>
+    <li class="classList"><a href="#">Portfolio</a></li>
+    <li class="classList"><a href="#">Contact</a></li>
+  </ul>
+  <img src="./img/Icon.png" alt="Close Menu" class="close" id="close-menu">
+  <div class="mobile-1"></div>
+  <div class="mobile-2"></div>
+</div>
+<!-- End Of Mobile Menu -->
   <!-- Header -->
 
   <header id="books-header">
     <div class="main-nav">
       <nav id="page-nav">
         <span><a href="#">Awesome Books</a></span>
-        <ul>
-          <li id="list"><a href="#my-books" class="link">List</a></li>
-          <li id="add-new"><a href="#form-section" class="link">Add New</a></li>
-          <li id="contact-us"><a href="#contact" class="link">Contact</a></li>
-        </ul>
-
+        <div>
+          <ul>
+            <li id="list"><a href="#my-books" class="link">List</a></li>
+            <li id="add-new"><a href="#form-section" class="link">Add New</a></li>
+            <li id="contact-us"><a href="#contact" class="link">Contact</a></li>
+          </ul>
+  
+          <img src="./img/union.png" alt="Menu Hamburger" class="hamburger" id="hamburger-icon"/>
+        </div>
+      
       </nav>
     </div>
 
     <p id="current-time"></p>
   </header>
-
  
   <main>
      <!-- Book List Section -->
@@ -35,12 +51,8 @@
       <h1>All Awesome Books</h1>
       <div id="books">
 
-
       </div>
-      <hr>
     </section>
-
-
 
     <!-- Add New Books Section -->
 
