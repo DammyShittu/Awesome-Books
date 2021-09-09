@@ -66,7 +66,7 @@ contactUs.forEach((talk) => {
     formSection.classList.add('hide');
     contactSection.classList.remove('hide');
     theBooksList.classList.add('hide');
-  })
+  });
 });
 
 // JavaScript Class

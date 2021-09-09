@@ -9,8 +9,12 @@ body {
   font-family: cursive;
   font-size: 16px;
   line-height: 1.6;
-  background-image: linear-gradient(rgba(39, 39, 41, 0.5),rgba(39, 39, 36, 0.5)),
-  url(./img/book-shelf.jpg);
+  background-image:
+    linear-gradient(
+      rgba(39, 39, 41, 0.5),
+      rgba(39, 39, 36, 0.5)
+    ),
+    url(./img/book-shelf.jpg);
   background-position: center;
   background-size: cover;
   color: #fff;
@@ -190,6 +194,7 @@ footer p {
   height: 50px;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 15px;
 }
 
@@ -256,7 +261,7 @@ input {
 }
 
 .contact-info {
-  border: 3px solid hsl(36, 38%, 56%);;
+  border: 3px solid hsl(36, 38%, 56%);
   padding: 10px;
   border-radius: 10px;
 }
@@ -282,10 +287,6 @@ footer {
   bottom: 0;
 }
 
-footer p {
-  justify-content: center;
-}
-
 /* New class to change display of page sections */
 
 .hide {
@@ -309,7 +310,7 @@ footer p {
   h2 {
     font-size: 50px;
   }
-  
+
   #page-nav ul {
     display: block;
   }
