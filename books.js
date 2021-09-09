@@ -10,6 +10,27 @@ const theBooksList = document.getElementById('my-books');
 const list = document.getElementById('list');
 const addNew = document.getElementById('add-new');
 const contactUs = document.getElementById('contact-us');
+const mobileMenu = document.getElementById('menu');
+const closeIcon = document.getElementById('close-menu');
+const openIcon = document.getElementById('hamburger-icon');
+
+function menuClose() {
+  mobileMenu.style.top = '-110%';
+}
+
+function menuOpen() {
+  mobileMenu.style.top = '0';
+}
+
+document.querySelectorAll('.classList').forEach((item) => {
+  item.addEventListener('click', () => {
+    mobileMenu.style.top = '-110%';
+  });
+});
+
+closeIcon.addEventListener('click', menuClose);
+openIcon.addEventListener('click', menuOpen);
+
 
 // Set Current Date and Time with Luxon.js Library
 const time = document.getElementById('current-time');

@@ -145,6 +145,7 @@ footer p,
 
 .hamburger {
   width: 70%;
+  cursor: pointer;
 }
 
 #current-time {
@@ -307,6 +308,10 @@ footer p {
   h1,
   h2 {
     font-size: 50px;
+  }
+  
+  #page-nav ul {
+    display: block;
   }
 
   #page-nav ul li {
