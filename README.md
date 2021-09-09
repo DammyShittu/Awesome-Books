@@ -15,9 +15,9 @@ This project contains the Awesome Books Project, coded according to requirements
      <td>Contact</td>
   </tr>
   <tr>
-    <td><img src="img\screenshot.png" width=280 height=480></td>
-    <td><img src="img\screenshot1.png" width=280 height=480></td>
-    <td><img src="img\screenshot2.png" width=280 height=480></td>
+    <td><img src="img\screenshot.png" width=400 height=400></td>
+    <td><img src="img\screenshot1.png" width=400 height=400></td>
+    <td><img src="img\screenshot2.png" width=400 height=400></td>
   </tr>
  </table>
 
