@@ -7,9 +7,9 @@ const form = document.getElementById('form');
 const formSection = document.getElementById('form-section');
 const contactSection = document.getElementById('contact');
 const theBooksList = document.getElementById('my-books');
-const list = document.getElementById('list');
-const addNew = document.getElementById('add-new');
-const contactUs = document.getElementById('contact-us');
+const list = document.querySelectorAll('.list');
+const addNew = document.querySelectorAll('.add-new');
+const contactUs = document.querySelectorAll('.contact-us');
 const mobileMenu = document.getElementById('menu');
 const closeIcon = document.getElementById('close-menu');
 const openIcon = document.getElementById('hamburger-icon');
@@ -31,7 +31,6 @@ document.querySelectorAll('.classList').forEach((item) => {
 closeIcon.addEventListener('click', menuClose);
 openIcon.addEventListener('click', menuOpen);
 
-
 // Set Current Date and Time with Luxon.js Library
 const time = document.getElementById('current-time');
 /* eslint-disable no-undef */
@@ -46,22 +45,28 @@ const myTime = setInterval(reloadTime, 1000);
 
 // Navigation Bar EventListeners
 
-list.addEventListener('click', () => {
-  formSection.classList.add('hide');
-  contactSection.classList.add('hide');
-  theBooksList.classList.remove('hide');
+list.forEach((ls) => {
+  ls.addEventListener('click', () => {
+    formSection.classList.add('hide');
+    contactSection.classList.add('hide');
+    theBooksList.classList.remove('hide');
+  });
 });
 
-addNew.addEventListener('click', () => {
-  formSection.classList.remove('hide');
-  contactSection.classList.add('hide');
-  theBooksList.classList.add('hide');
+addNew.forEach((addN) => {
+  addN.addEventListener('click', () => {
+    formSection.classList.remove('hide');
+    contactSection.classList.add('hide');
+    theBooksList.classList.add('hide');
+  });
 });
 
-contactUs.addEventListener('click', () => {
-  formSection.classList.add('hide');
-  contactSection.classList.remove('hide');
-  theBooksList.classList.add('hide');
+contactUs.forEach((talk) => {
+  talk.addEventListener('click', () => {
+    formSection.classList.add('hide');
+    contactSection.classList.remove('hide');
+    theBooksList.classList.add('hide');
+  })
 });
 
 // JavaScript Class

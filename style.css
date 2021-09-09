@@ -278,7 +278,7 @@ footer {
   width: 100%;
   background-color: hsl(36, 38%, 56%);
   color: #f4f4f4;
-  position: fixed;
+  position: absolute;
   bottom: 0;
 }
 
