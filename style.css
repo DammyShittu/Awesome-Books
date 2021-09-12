@@ -6,7 +6,7 @@
 
 body {
   width: 100%;
-  font-family: cursive;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   background-image:
@@ -114,8 +114,14 @@ footer p,
 #contact a,
 #page-nav span a {
   text-decoration: none;
-  color: #fff;
   transition: 250ms ease-out;
+}
+
+#contact a,
+footer,
+#page-nav span a,
+#page-nav ul li a {
+  color: #333;
 }
 
 #page-nav span a {
@@ -127,7 +133,6 @@ footer p,
   font-size: 14px;
   text-decoration: none;
   transition: 300ms ease-in-out;
-  color: #fff;
 }
 
 #contact a:hover,
@@ -261,7 +266,8 @@ input {
 }
 
 .contact-info {
-  border: 3px solid hsl(36, 38%, 56%);
+  background-color: #fff;
+  color: #333;
   padding: 10px;
   border-radius: 10px;
 }
@@ -275,6 +281,7 @@ input {
   padding-left: 15px;
   line-height: 1.9;
   font-size: 15px;
+  color: #333;
 }
 
 /* Footer */
@@ -282,8 +289,7 @@ input {
 footer {
   width: 100%;
   background-color: hsl(36, 38%, 56%);
-  color: #f4f4f4;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 
